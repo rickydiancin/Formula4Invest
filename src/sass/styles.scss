@@ -1683,6 +1683,13 @@ input[type="text"] {
 .fh5co-parallax {
   height: 600px;
 }
+#login {
+  .fh5co-table,
+.fh5co-table-cell,   
+.fh5co-parallax {
+    height: 300px;
+}
+}
 // .fh5co-parallax2 {
 //   padding-top: 10em;
 //   height: inherit !important;

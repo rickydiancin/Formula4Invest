@@ -27,7 +27,7 @@ export class AddEventComponent implements OnInit {
       //  console.log(auth.uid);
         this.name = auth;
        // console.log(this.name);
-     this._firebaseService.getTheUsers(auth.uid).subscribe(users => {
+     this._firebaseService.getUsers(auth.uid).subscribe(users => {
       this.users = users;
       // console.log(users[0].$value);
    // console.log(users[2].$value);

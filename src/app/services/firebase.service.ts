@@ -15,7 +15,7 @@ export class FirebaseService{
         if(user != null){
             this.users = this._af.database.list('/users/', {
                 query: {
-                    orderByChild: 'user',
+                    orderByChild: 'regUser',
                     equalTo: user
                 }
             }) as 
@@ -27,17 +27,11 @@ export class FirebaseService{
         
         return this.users;
     }
-    getTheUsers(uid:string = null){
-        if(uid != null){
-            this.users = this._af.database.list('/users/'+uid) as 
-            FirebaseListObservable<Users[]>
-        } 
-        
-        return this.users;
-    }
+   
     addUser(newUser){
-        return this.users.push(newUser);
+        return this.users.push(newUser).then((item) => {
+             console.log(item.key); 
+            });
     }
-    
 
 }

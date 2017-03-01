@@ -24,15 +24,15 @@ export class MembersComponent implements OnInit {
 
     this.af.auth.subscribe(auth => {
       if(auth) {
-      //  console.log(auth.uid);
+        console.log(auth.uid);
         this.name = auth;
-       // console.log(this.name);
-     this._firebaseService.getTheUsers(auth.uid).subscribe(users => {
+       console.log(this.name);
+     this._firebaseService.getUsers(auth.uid).subscribe(users => {
       this.users = users;
-      // console.log(users[0].$value);
+    //  console.log(users[0].firstname);
    // console.log(users[2].$value);
 
-    this.currentUser = users[2].$value;
+    this.currentUser = users[0].firstname;
     });
 
 

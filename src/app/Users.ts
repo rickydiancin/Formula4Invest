@@ -4,5 +4,6 @@ export interface Users{
     date?: number;
     firstname?: string;
     lastname?: string;
+    regUser?: string;
 
 }

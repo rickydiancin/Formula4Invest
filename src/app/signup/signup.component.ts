@@ -36,19 +36,20 @@ users:Users[];
         password: formData.value.password
       }).then(
         (success) => {
-
+//console.log("success: "+success.uid);
        var created_at = new Date().toString();   
 
       var newUser = {
         firstname: formData.value.firstname,
        lastname: formData.value.lastname,
        email: formData.value.email,
-        created_at:created_at
+        created_at:created_at,
+        regUser: success.uid
       }
 
       this._firebaseService.addUser(newUser);
       
-        console.log(success);
+        //console.log(success);
         this.router.navigate(['/login'])
       }).catch(
         (err) => {
