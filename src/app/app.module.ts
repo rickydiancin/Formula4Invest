@@ -12,6 +12,9 @@ import { AuthGuard } from './services/auth.service';
 import { routes } from './app.routes';
 import { AddEventComponent } from './add-event/add-event.component';
 import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { Header2Component } from './header2/header2.component';
 
 // Must export the config
 export const firebaseConfig = {
@@ -30,7 +33,10 @@ export const firebaseConfig = {
     MembersComponent,
     SignupComponent,
     AddEventComponent,
-    HomeComponent
+    HomeComponent,
+    HeaderComponent,
+    FooterComponent,
+    Header2Component
   ],
   imports: [
     BrowserModule,
