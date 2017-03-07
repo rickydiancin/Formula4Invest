@@ -1,5 +1,27 @@
-<div class="form-container" id="toolbar">
-    <header [@fallIn]="state">
+	<div id="login">
+	<div  class="fh5co-parallax" style="background-image: url(assets/images/slider1.jpg);" data-stellar-background-ratio="0.3">
+		<div class="overlay-gradient"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
+					<div class="fh5co-intro fh5co-table-cell">
+						<h1 class="text-center">User Profile</h1>
+						<p>Login to start adding your first event.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div></div>
+
+
+	<div id="fh5co-contact-section">
+		<div class="container">
+		<div class="row">
+<div class="page-header">
+  <h3>Account Information</h3>
+</div>
+
+  <!--  <header [@fallIn]="state">
       <button (click)="logout()" class="basic-btn">Logout</button>
        <a routerLink="/add-event" routerLinkActive="active" class="add-event">Add Event</a>
     </header>
@@ -7,7 +29,17 @@
       <h2>Hey {{ name.auth.email }}!</h2>
    <h2>Hi {{ currentUser }}!</h2>
 
-      <img src="assets/images/filler.png" />
-    </div>
-    
+    </div>-->
+    <ul class="list-group">
+  <li class="list-group-item">Email: {{ name.auth.email }}</li>
+  <li class="list-group-item">Name: {{currentUser}}</li>
+  <li class="list-group-item">Phone: 707-5852</li>
+  <li class="list-group-item">Website: www.diancin.com</li>
+  <li class="list-group-item">Address: Bacolod City</li>
+</ul>
+
+
+
+</div> 
 </div>
+</div> 

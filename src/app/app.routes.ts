@@ -15,20 +15,14 @@ import { AddEventComponent } from './add-event/add-event.component';
 
 
 export const router: Routes = [
-    { path: 'home', redirectTo: '', pathMatch: 'full' },
-     { path: '', children:[
-         { path: 'login', component: LoginComponent},
-         { path: 'signup', component: SignupComponent },
-       // { path: 'signup', component: SignupComponent},
-         { path: '' , component: HomeComponent},
-        { path: '' , component: HeaderComponent, outlet: 'header'},
-     { path: '' , component: FooterComponent, outlet: 'footer'}
-     ]},
-     
+     // { path: 'home', redirectTo: '', pathMatch: 'full' },
+     { path: '', component: HomeComponent },
+    { path: 'login', component: LoginComponent },
     { path: 'signup', component: SignupComponent },
     { path: 'login-email', component: EmailComponent },
-    { path: 'members', component: MembersComponent, canActivate: [AuthGuard] },
-     { path: 'add-event', component: AddEventComponent, canActivate: [AuthGuard] }
+    { path: 'add-event', component: AddEventComponent },
+    { path: 'members', component: MembersComponent, canActivate: [AuthGuard] }
+    // { path: 'add-event', component: AddEventComponent, canActivate: [AuthGuard] }
 
 
 ]

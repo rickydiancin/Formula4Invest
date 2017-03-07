@@ -10,8 +10,8 @@ import {Users} from '../Users';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss'],
   providers: [FirebaseService],
-    animations: [moveIn(), fallIn()],
-  host: {'[@moveIn]': ''}
+    animations: [moveIn(), fallIn()]
+ // host: {'[@moveIn]': ''}
 })
 export class SignupComponent implements OnInit { 
 users:Users[];
@@ -22,9 +22,10 @@ users:Users[];
 
   }
   ngOnInit(){
+
     this._firebaseService.getUsers().subscribe(users => {
       this.users = users;
-    });
+   });
     
   }
 
@@ -50,7 +51,7 @@ users:Users[];
       this._firebaseService.addUser(newUser);
       
         //console.log(success);
-        this.router.navigate(['/login'])
+        this.router.navigate(['/members'])
       }).catch(
         (err) => {
         console.log(err);

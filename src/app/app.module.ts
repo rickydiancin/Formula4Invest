@@ -15,6 +15,8 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { Header2Component } from './header2/header2.component';
+import { BrowseEventsComponent } from './browse-events/browse-events.component';
+import {FlashMessagesModule} from 'angular2-flash-messages';
 
 // Must export the config
 export const firebaseConfig = {
@@ -36,12 +38,14 @@ export const firebaseConfig = {
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    Header2Component
+    Header2Component,
+    BrowseEventsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    FlashMessagesModule,
     AngularFireModule.initializeApp(firebaseConfig),
     routes
   ],

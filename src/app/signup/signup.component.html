@@ -21,13 +21,17 @@
   <span class="error" *ngIf="error" [@fallIn]='state'>{{ error }}</span>
     
   <form #formData='ngForm' (ngSubmit)="addUser(formData)">
- <input type="text" placeholder="First Name" (ngModel)="firstname" name="firstname" class="txt" required>
-  <input type="text" placeholder="Last Name" (ngModel)="lastname" name="lastname" class="txt" required>
-    <input type="text" placeholder="Email address.." (ngModel)="email" name="email" class="txt" required>
-    <input type="password" placeholder="Password" (ngModel)="password" name="password" class="txt" required>
+    <div class="form-group">
+ <input type="text" placeholder="First Name" (ngModel)="firstname" name="firstname" class="form-control" required>
+ </div> <div class="form-group">
+  <input type="text" placeholder="Last Name" (ngModel)="lastname" name="lastname" class="form-control" required>
+   </div> <div class="form-group">
+    <input type="text" placeholder="Email address.." (ngModel)="email" name="email" class="form-control" required>
+     </div> <div class="form-group">
+    <input type="password" placeholder="Password" (ngModel)="password" name="password" class="form-control" required>
+ </div>
 
-
-    <button type="submit" [disabled]="!formData.valid" class="basic-btn">Create my account</button>
+    <button type="submit" [disabled]="!formData.valid" class="btn btn-primary">Create my account</button>
   </form>
 </div> 
 </div> 

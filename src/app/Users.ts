@@ -5,5 +5,5 @@ export interface Users{
     firstname?: string;
     lastname?: string;
     regUser?: string;
-
+   
 }

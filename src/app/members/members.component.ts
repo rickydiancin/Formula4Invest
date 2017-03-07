@@ -10,35 +10,33 @@ import {Users} from '../Users';
   templateUrl: './members.component.html',
   styleUrls: ['./members.component.scss'],
   animations: [moveIn(), fallIn(), moveInLeft()],
-  host: {'[@moveIn]': ''},
+  //host: {'[@moveIn]': ''},
   providers: [FirebaseService]
 })
 export class MembersComponent implements OnInit {
   name: any;
-  currentUser: any;
+ 
   state: string = '';
    users:Users[];
+    currentUser: any;
   
 
   constructor(public af: AngularFire,private router: Router, private _firebaseService:FirebaseService) {
 
     this.af.auth.subscribe(auth => {
       if(auth) {
-        console.log(auth.uid);
+        //console.log(auth.uid);
         this.name = auth;
-       console.log(this.name);
+      // console.log(this.name);
      this._firebaseService.getUsers(auth.uid).subscribe(users => {
       this.users = users;
-    //  console.log(users[0].firstname);
-   // console.log(users[2].$value);
+    // console.log(this.users);
+   //console.log(users[0]);
 
-    this.currentUser = users[0].firstname;
+    this.currentUser = users[0].firstname + ' ' + users[0].lastname ;
+    //console.log(this.currentUser);
     });
 
-
-
-
-       // this.currentUser = 
       }
     });
 

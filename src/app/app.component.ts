@@ -1,20 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
+import {FlashMessagesService} from 'angular2-flash-messages';
 import {FirebaseService} from './services/firebase.service';
 import { Router } from '@angular/router';
 import { moveIn, fallIn } from './router.animations';
 import {Users} from './Users';
+import {Events} from './Events';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-   providers: [FirebaseService]
+   providers: [FirebaseService,FlashMessagesService]
 })
 export class AppComponent implements OnInit{
   title = 'app works!';
 
   users:Users[];
+   events:Events[];
 
   constructor(private _firebaseService:FirebaseService) {
   
