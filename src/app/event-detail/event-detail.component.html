@@ -1,12 +1,12 @@
-	<div id="login">
+<div id="login" *ngIf="event">
 	<div  class="fh5co-parallax" style="background-image: url(assets/images/slider1.jpg);" data-stellar-background-ratio="0.3">
 		<div class="overlay-gradient"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
 					<div class="fh5co-intro fh5co-table-cell">
-						<h1 class="text-center">Name of Event</h1>
-						<p>Find Your New Experience</p>
+						<h1 class="text-center">{{event.eventname}}</h1>
+						<p>{{event.description}}</p>
 					</div>
 				</div>
 			</div>
@@ -17,7 +17,7 @@
 		<div class="container">
 			<div class="row">
 
-        <div *ngIf="event">
+       
   <a [routerLink]="['/events']">Go Back</a>
   <br>
   <h2 class="page-header">{{event.eventname}}</h2>
@@ -36,7 +36,7 @@
     <a class="btn btn-default" href="#">Edit</a>
     <a class="btn btn-danger" href="#">Delete</a>
   </div>
-</div>
+
 
 
 		</div>
