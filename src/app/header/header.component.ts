@@ -3,6 +3,9 @@ import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 import { Router } from '@angular/router';
 import {FirebaseService} from '../services/firebase.service';
 
+
+
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -10,7 +13,7 @@ import {FirebaseService} from '../services/firebase.service';
     providers: [FirebaseService]
 })
 export class HeaderComponent implements OnInit {
-
+ 
   constructor(public af: AngularFire,private router: Router, private _firebaseService:FirebaseService) { }
 
   logout() {
@@ -21,6 +24,8 @@ export class HeaderComponent implements OnInit {
  
 
   ngOnInit() {
+   
+
   }
 
 }

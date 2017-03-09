@@ -1,5 +1,7 @@
-$(function(){
 
+
+$(function(){
+$(document).ready(function(){
    'use strict';
 
    var isMobile = {
@@ -234,3 +236,4 @@ $(function(){
 });
 	
 	
+  });
