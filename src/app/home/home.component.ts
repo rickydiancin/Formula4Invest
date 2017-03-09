@@ -2,6 +2,7 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 import { Router } from '@angular/router';
 import { moveIn, fallIn } from '../router.animations';
+import * as $ from 'jquery';
 
 
 @Component({

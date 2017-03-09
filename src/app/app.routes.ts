@@ -13,6 +13,7 @@ import { Header2Component } from './header2/header2.component';
 import { FooterComponent } from './footer/footer.component';
 import { AddEventComponent } from './add-event/add-event.component';
 import { EventsComponent } from './events/events.component';
+import { EventDetailComponent } from './event-detail/event-detail.component';
 
 
 export const router: Routes = [
@@ -22,7 +23,8 @@ export const router: Routes = [
     { path: 'signup', component: SignupComponent },
     { path: 'login-email', component: EmailComponent },
     { path: 'add-event', component: AddEventComponent },
-     { path: 'events', component: EventsComponent },
+    { path: 'events', component: EventsComponent },
+    {path:'event/:id', component:EventDetailComponent},
     { path: 'members', component: MembersComponent, canActivate: [AuthGuard] }
     // { path: 'add-event', component: AddEventComponent, canActivate: [AuthGuard] }
 

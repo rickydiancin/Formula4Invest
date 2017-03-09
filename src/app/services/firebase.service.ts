@@ -9,6 +9,7 @@ import {Events} from '../Events';
 export class FirebaseService{
     users: FirebaseListObservable<Users[]>;
      events: FirebaseListObservable<Events[]>;
+     event: FirebaseObjectObservable<Events[]>;
     constructor(private _af: AngularFire){
     
     }
@@ -36,10 +37,20 @@ export class FirebaseService{
             });
     }
 
- getEvents(){
-    this.events = this._af.database.list('/events') as FirebaseListObservable<Events[]>
+    getEvents(){
+     this.events = this._af.database.list('/events', {
+                query: {
+                    orderByChild: 'date'
+                }
+            }) as 
+            FirebaseListObservable<Events[]>
     return this.events;
-    }
+}
+
+  getEventDetails(id){
+    this.event = this._af.database.object('/events/'+id) as FirebaseObjectObservable<Events>
+    return this.event;
+  }
     addEvent(theevent){
         return this.events.push(theevent);
     }

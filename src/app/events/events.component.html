@@ -26,9 +26,10 @@
 							<a class="book-now text-center" href="#"><i class="ti-calendar"></i> Check-in</a>
 						</div>
 						<div class="desc">
-							<h3><a href="#">{{event.eventname}}</a></h3>
+							<h3><a [routerLink]="['/event/'+event.$key]">{{event.eventname}}</a></h3>
 							<p>{{event.description}}</p>
-							<small>{{event.location}}</small>
+							<small>{{event.location}}</small><br>
+							<small>{{event.date}}</small>
 						</div>
 					</div>
 				</div>

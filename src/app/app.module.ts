@@ -18,6 +18,7 @@ import { Header2Component } from './header2/header2.component';
 import { BrowseEventsComponent } from './browse-events/browse-events.component';
 import {FlashMessagesModule} from 'angular2-flash-messages';
 import { EventsComponent } from './events/events.component';
+import { EventDetailComponent } from './event-detail/event-detail.component';
 
 // Must export the config
 export const firebaseConfig = {
@@ -41,7 +42,8 @@ export const firebaseConfig = {
     FooterComponent,
     Header2Component,
     BrowseEventsComponent,
-    EventsComponent
+    EventsComponent,
+    EventDetailComponent
   ],
   imports: [
     BrowserModule,
