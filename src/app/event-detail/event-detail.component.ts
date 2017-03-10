@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 import {FirebaseService} from '../services/firebase.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
@@ -14,10 +15,21 @@ export class EventDetailComponent implements OnInit {
    event: any;
 
   constructor(
+    public af: AngularFire,
     private firebaseService: FirebaseService,
     private router:Router,
     private route:ActivatedRoute
   ) { 
+      this.af.auth.subscribe(auth => {
+      if(auth) {
+        console.log('uid: '+auth.uid);
+        //this.name = auth;
+           // Get ID
+    this.id = this.route.snapshot.params['id'];
+        console.log(this.id);
+
+      }
+    });
 
   }
 
@@ -34,5 +46,11 @@ export class EventDetailComponent implements OnInit {
     });
 
   }
+
+
+addCheckin(){
+  
+}
+  
 
 }
