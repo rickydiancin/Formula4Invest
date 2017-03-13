@@ -3,13 +3,17 @@ import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'a
 import 'rxjs/add/operator/map';
 import {Users} from '../Users';
 import {Events} from '../Events';
+import {Categories} from '../Categories';
 
 
 @Injectable()
 export class FirebaseService{
     users: FirebaseListObservable<Users[]>;
      events: FirebaseListObservable<Events[]>;
+     categories: FirebaseListObservable<Categories[]>;
      event: FirebaseObjectObservable<Events[]>;
+
+    checkin: any;
     constructor(private _af: AngularFire){
     
     }
@@ -51,8 +55,28 @@ export class FirebaseService{
     this.event = this._af.database.object('/events/'+id) as FirebaseObjectObservable<Events>
     return this.event;
   }
-    addEvent(theevent){
+addEvent(theevent){
         return this.events.push(theevent);
     }
+checkIn(eid,uid){
+     const list = this._af.database.list('/events/'+eid+'/checkins');
+     //const list = angularFire.database.list(`users/${uid}/collections`);
+ //this.users = this._af.database.list('/users/') as FirebaseListObservable<Users[]>
+   return list.push({regUser:uid}).then((item) => {
+             //console.log(item.key); 
+            });
+    }
 
+   getCategories(){
+     this.categories = this._af.database.list('/categories', {
+                query: {
+                    orderByChild: 'name'
+                }
+            }) as 
+            FirebaseListObservable<Categories[]>
+    return this.categories;
+}
+addCategory(thecategory){
+        return this.categories.push(thecategory);
+    }
 }

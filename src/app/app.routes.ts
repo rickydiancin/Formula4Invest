@@ -14,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AddEventComponent } from './add-event/add-event.component';
 import { EventsComponent } from './events/events.component';
 import { EventDetailComponent } from './event-detail/event-detail.component';
+import { CategoriesComponent } from './categories/categories.component';
 
 
 export const router: Routes = [
@@ -25,7 +26,8 @@ export const router: Routes = [
     { path: 'add-event', component: AddEventComponent },
     { path: 'events', component: EventsComponent },
     {path:'event/:id', component:EventDetailComponent},
-    { path: 'members', component: MembersComponent, canActivate: [AuthGuard] }
+    { path: 'members', component: MembersComponent, canActivate: [AuthGuard] },
+     { path: 'categories', component: CategoriesComponent, canActivate: [AuthGuard] }
     // { path: 'add-event', component: AddEventComponent, canActivate: [AuthGuard] }
 
 

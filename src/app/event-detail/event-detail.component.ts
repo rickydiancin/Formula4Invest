@@ -16,20 +16,11 @@ export class EventDetailComponent implements OnInit {
 
   constructor(
     public af: AngularFire,
-    private firebaseService: FirebaseService,
+    private _firebaseService: FirebaseService,
     private router:Router,
     private route:ActivatedRoute
   ) { 
-      this.af.auth.subscribe(auth => {
-      if(auth) {
-        console.log('uid: '+auth.uid);
-        //this.name = auth;
-           // Get ID
-    this.id = this.route.snapshot.params['id'];
-        console.log(this.id);
-
-      }
-    });
+ 
 
   }
 
@@ -39,17 +30,27 @@ export class EventDetailComponent implements OnInit {
     // Get ID
     this.id = this.route.snapshot.params['id'];
 
-    this.firebaseService.getEventDetails(this.id).subscribe(event => {
+    this._firebaseService.getEventDetails(this.id).subscribe(event => {
       this.event = event;
-
-
     });
 
   }
 
 
 addCheckin(){
-  
+
+       this.af.auth.subscribe(auth => {
+      if(auth) {
+        //console.log('uid: '+auth.uid);
+        //this.name = auth;
+           // Get ID
+    this.id = this.route.snapshot.params['id'];
+       // console.log(this.id);
+        this._firebaseService.checkIn(this.id, auth.uid);
+
+      }
+    });
+
 }
   
 

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { moveIn, fallIn, moveInLeft } from '../router.animations';
 import {FirebaseService} from '../services/firebase.service';
 import {Events} from '../Events';
+import {Categories} from '../Categories';
 import {FlashMessagesService} from 'angular2-flash-messages';
 
 @Component({
@@ -16,6 +17,7 @@ import {FlashMessagesService} from 'angular2-flash-messages';
 })
 export class AddEventComponent implements OnInit {
   events:Events[];
+  categories:Categories[];
   eventname:any;
   location:any;
   date:any;
@@ -36,6 +38,9 @@ export class AddEventComponent implements OnInit {
 
         this._firebaseService.getEvents().subscribe(events => {
       this.events = events;
+   });
+         this._firebaseService.getCategories().subscribe(categories => {
+      this.categories = categories;
    });
     
 

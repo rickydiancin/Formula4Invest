@@ -9,20 +9,21 @@
 							<li><a  [routerLink]="['/events']">Browse Events</a></li>
 							<li><a  [routerLink]="['/add-event']">Add Event</a></li>
 							<li><a  href="#">About Us</a></li>
-							<li>
-								<a href="#" class="fh5co-sub-ddown">FAQs</a>
-								<ul class="fh5co-sub-menu">
-									<li><a href="#">FAQs</a></li>
-								<li><a href="#">Help Center</a></li>
-                	<li><a href="#">How it works?</a></li>
-					
-								</ul>
-							</li>
+						
 					
 							<li><a href="#">Blog</a></li>
 							<li><a href="#">Contact</a></li>
 						<li *ngIf="!(af.auth | async)"><a routerLink="/login" >Login</a></li>
 						<li *ngIf="(af.auth | async)"><a (click)="logout()">Logout</a></li>
+							<li>
+								<a href="#" class="fh5co-sub-ddown">Admin</a>
+								<ul class="fh5co-sub-menu">
+									<li><a [routerLink]="['/categories']">Categories</a></li>
+								<li><a href="#">Help Center</a></li>
+      
+					
+								</ul>
+							</li>
 						</ul>
 					</nav>
 				</div>
