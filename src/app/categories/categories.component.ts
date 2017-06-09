@@ -14,6 +14,7 @@ export class CategoriesComponent implements OnInit {
     date:any;
   categoryname:any;
   description:any;
+  //flashMessage: FlashMessagesService;
 
   constructor(private _firebaseService:FirebaseService, public flashMessage:FlashMessagesService) { }
 

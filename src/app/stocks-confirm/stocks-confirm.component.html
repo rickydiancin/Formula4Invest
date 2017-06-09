@@ -1,0 +1,55 @@
+	<div id="fh5co-contact-section">
+		<div class="container">
+
+<div class="row animate-box fadeInUp animated-fast">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>Confirm Your Bet</h2>
+					<p>Kindly review your bet before submitting</p>
+                    <p><a  class="btn btn-primary btn-lg btn-learn" routerLink="/stocks/{{price}}">Go Back</a></p>
+				</div>
+			</div>
+
+
+		<div class="row">
+
+				<div class="col-md-4 text-center animate-box">
+					<div class="services">
+						<span class="icon">
+					<i class="fa fa-bar-chart" aria-hidden="true"></i>
+						</span>
+						<div class="desc">
+							<h3>Stocks</h3>
+							<p>You have chosen to be on stocks</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 text-center animate-box">
+					<div class="services">
+						<span class="icon">
+							<i class="fa fa-money" aria-hidden="true"></i>
+						</span>
+						<div class="desc">
+							<h3>${{price}}</h3>
+						<p>You are betting ${{price}}</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 text-center animate-box">
+					<div class="services">
+						<span class="icon">
+							<i class="fa fa-line-chart" aria-hidden="true"></i>
+						</span>
+						<div class="desc">
+						<h3><a href="#">{{company}}</a></h3>
+						<p>You are betting on {{company}}</p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-12 text-center animate-box">
+					<p><a class="btn btn-success btn-lg btn-learn" (click)="addBetSubmit()">Place Your Bet!</a></p>
+
+				</div>
+			</div>
+
+    		</div>		</div>

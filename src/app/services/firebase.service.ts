@@ -1,21 +1,29 @@
 import {Injectable} from '@angular/core';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
+import { Router } from '@angular/router';
+import * as firebase from 'firebase';
 import 'rxjs/add/operator/map';
 import {Users} from '../Users';
-import {Events} from '../Events';
+import {Bets} from '../Bets';
+import {Challenges} from '../Challenges';
 import {Categories} from '../Categories';
 
 
 @Injectable()
 export class FirebaseService{
     users: FirebaseListObservable<Users[]>;
-     events: FirebaseListObservable<Events[]>;
+     bets: FirebaseListObservable<Bets[]>;
+     challenges: FirebaseListObservable<Challenges[]>;
      categories: FirebaseListObservable<Categories[]>;
-     event: FirebaseObjectObservable<Events[]>;
+     bet: FirebaseObjectObservable<Bets[]>;
+     folder: any;
 
     checkin: any;
-    constructor(private _af: AngularFire){
-    
+    constructor(
+        private _af: AngularFire,
+        private router: Router, 
+        ){
+      this.folder = 'eventimages';
     }
     getUsers(user:string = null){
         if(user != null){
@@ -41,22 +49,38 @@ export class FirebaseService{
             });
     }
 
-    getEvents(){
-     this.events = this._af.database.list('/events', {
+    getBets(){
+     this.bets = this._af.database.list('/bets', {
                 query: {
                     orderByChild: 'date'
                 }
             }) as 
-            FirebaseListObservable<Events[]>
-    return this.events;
+            FirebaseListObservable<Bets[]>
+    return this.bets;
+}
+addBet(thebet){
+        return this.bets.push(thebet).then((item) => {
+             console.log(item.key); 
+               this.router.navigate(['/bets']);
+            });
+    }
+
+    getChallenges(){
+     this.challenges = this._af.database.list('/challenges', {
+                query: {
+                    orderByChild: 'date'
+                }
+            }) as 
+            FirebaseListObservable<Challenges[]>
+    return this.challenges;
 }
 
-  getEventDetails(id){
-    this.event = this._af.database.object('/events/'+id) as FirebaseObjectObservable<Events>
-    return this.event;
-  }
-addEvent(theevent){
-        return this.events.push(theevent);
+
+    addChallenge(thecha){
+        return this.challenges.push(thecha).then((item) => {
+             console.log(item.key); 
+               this.router.navigate(['/challenges']);
+            });
     }
 checkIn(eid,uid){
      const list = this._af.database.list('/events/'+eid+'/checkins');
@@ -66,7 +90,10 @@ checkIn(eid,uid){
              //console.log(item.key); 
             });
     }
-
+  getBetDetails(bid){
+    this.bet = this._af.database.object('/bets/'+bid) as FirebaseObjectObservable<Bets>
+    return this.bet;
+  }
    getCategories(){
      this.categories = this._af.database.list('/categories', {
                 query: {

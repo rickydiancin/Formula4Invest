@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { moveIn, fallIn } from './router.animations';
 import {Users} from './Users';
 import {Events} from './Events';
+import * as jQuery from 'jquery';
 
 
 @Component({

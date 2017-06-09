@@ -18,6 +18,12 @@ users:Users[];
   state: string = '';
   error: any;
 
+firstname: any;
+lastname: any;
+email: any;
+codename: any;
+password: any;
+
   constructor(public af: AngularFire,private router: Router, private _firebaseService:FirebaseService) {
 
   }
@@ -44,6 +50,7 @@ users:Users[];
         firstname: formData.value.firstname,
        lastname: formData.value.lastname,
        email: formData.value.email,
+        codename: formData.value.codename,
         created_at:created_at,
         regUser: success.uid
       }

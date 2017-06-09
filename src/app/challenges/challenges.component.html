@@ -1,0 +1,40 @@
+	<div id="fh5co-contact-section">
+		<div class="container">
+
+<div class="row animate-box fadeInUp animated-fast">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>Challanges</h2>
+					<p>These are the available challenges</p>
+                    <p><a  class="btn btn-primary btn-lg btn-learn" routerLink="/bet">Place Your Bet!</a></p>
+				</div>
+			</div>
+
+
+		<div class="row">
+
+				<div class="col-md-4 text-center animate-box" *ngFor="let challenge of challenges">
+					<div class="services">
+						<span class="icon">
+					<i class="fa fa-users" aria-hidden="true"></i>
+						</span>
+						<div class="desc">
+					
+							
+							<p>{{thehost[0].codename}}</p>
+							<h2>VS</h2>
+					
+						<p>{{thechallenger[0].codename}}</p>
+							<p><a  class="btn btn-primary btn-lg btn-info" routerLink="/race/{{challenge.bid}}">Go to Race</a></p>
+						</div>
+					</div>
+				</div>
+
+
+				
+				<div class="col-md-12 text-center animate-box">
+					<p><a class="btn btn-success btn-lg btn-primary" href="#">Load More</a></p>
+
+				</div>
+			</div>
+
+    		</div>		</div>

@@ -1,0 +1,38 @@
+	<div id="fh5co-contact-section">
+		<div class="container">
+
+<div class="row animate-box fadeInUp animated-fast">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>Challenge a Bet!</h2>
+					<p>It's time to challenge a player!</p>
+                    <p><a  class="btn btn-primary btn-lg btn-learn" routerLink="/bet">Place Your Bet!</a></p>
+				</div>
+			</div>
+
+
+		<div class="row">
+
+				<div class="col-md-4 text-center animate-box" *ngFor="let bet of bets">
+					<div class="services">
+						<span class="icon">
+					<i class="fa fa-bar-chart" aria-hidden="true"></i>
+						</span>
+						<div class="desc">
+					
+							<h2 class="">${{bet.amount}}</h2>
+							<p>{{bet.company}}({{bet.type}})</p>
+							<p>	Host: {{theuser[0].codename}}</p>
+							<p><a  class="btn btn-primary btn-lg btn-info" [routerLink]="['/challenge/'+bet.$key]">Challenge</a></p>
+						</div>
+					</div>
+				</div>
+
+
+				
+				<div class="col-md-12 text-center animate-box">
+					<p><a class="btn btn-success btn-lg btn-primary" href="#">Load More</a></p>
+
+				</div>
+			</div>
+
+    		</div>		</div>

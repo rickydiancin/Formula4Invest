@@ -10,24 +10,29 @@ import { MembersComponent } from './members/members.component';
 import { SignupComponent } from './signup/signup.component';
 import { AuthGuard } from './services/auth.service';
 import { routes } from './app.routes';
-import { AddEventComponent } from './add-event/add-event.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { Header2Component } from './header2/header2.component';
 import { BrowseEventsComponent } from './browse-events/browse-events.component';
 import {FlashMessagesModule} from 'angular2-flash-messages';
-import { EventsComponent } from './events/events.component';
-import { EventDetailComponent } from './event-detail/event-detail.component';
 import { CategoriesComponent } from './categories/categories.component';
+import { BetComponent } from './bet/bet.component';
+import { StocksComponent } from './stocks/stocks.component';
+import { CompanyComponent } from './company/company.component';
+import { StocksConfirmComponent } from './stocks-confirm/stocks-confirm.component';
+import { BetsComponent } from './bets/bets.component';
+import { ChallengeComponent } from './challenge/challenge.component';
+import { ChallengesComponent } from './challenges/challenges.component';
+import { RaceComponent } from './race/race.component';
 
 // Must export the config
 export const firebaseConfig = {
- apiKey: "AIzaSyARWLIA36MUInqrrL8UCNc-o1xYB9zmEfA",
-    authDomain: "ding-web.firebaseapp.com",
-    databaseURL: "https://ding-web.firebaseio.com",
-    storageBucket: "ding-web.appspot.com",
-    messagingSenderId: "133754945571"
+ apiKey: "AIzaSyCWsLAKJTWc_M_-TPKSv2NVJ8zdSxIwvoI",
+    authDomain: "formula4invest.firebaseapp.com",
+    databaseURL: "https://formula4invest.firebaseio.com",
+    storageBucket: "formula4invest.appspot.com",
+    messagingSenderId: "1010961284206"
 };
 
 @NgModule({
@@ -37,15 +42,20 @@ export const firebaseConfig = {
     EmailComponent,
     MembersComponent,
     SignupComponent,
-    AddEventComponent,
     HomeComponent,
     HeaderComponent,
     FooterComponent,
     Header2Component,
     BrowseEventsComponent,
-    EventsComponent,
-    EventDetailComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    BetComponent,
+    StocksComponent,
+    CompanyComponent,
+    StocksConfirmComponent,
+    BetsComponent,
+    ChallengeComponent,
+    ChallengesComponent,
+    RaceComponent
   ],
   imports: [
     BrowserModule,

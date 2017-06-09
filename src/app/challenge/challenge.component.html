@@ -1,0 +1,56 @@
+	<div id="fh5co-contact-section">
+		<div class="container">
+
+<div class="row animate-box fadeInUp animated-fast">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+					<h2>Confirm Your Challenge</h2>
+					<p>Kindly review your challenge before submitting</p>
+          	<p>Your are challenging USER: {{bet?.regUser}}</p>
+                    <p><a  class="btn btn-primary btn-lg btn-learn" routerLink="/bets">Go Back</a></p>
+				</div>
+			</div>
+
+
+		<div class="row">
+
+				<div class="col-md-4 text-center animate-box">
+					<div class="services">
+						<span class="icon">
+					<i class="fa fa-bar-chart" aria-hidden="true"></i>
+						</span>
+						<div class="desc">
+							<h3>{{bet?.type}}</h3>
+							<p>You have chosen to be on stocks</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 text-center animate-box">
+					<div class="services">
+						<span class="icon">
+							<i class="fa fa-money" aria-hidden="true"></i>
+						</span>
+						<div class="desc">
+							<h3>${{bet?.amount}}</h3>
+						<p>You are betting ${{bet?.amount}}</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 text-center animate-box">
+					<div class="services">
+						<span class="icon">
+							<i class="fa fa-line-chart" aria-hidden="true"></i>
+						</span>
+						<div class="desc">
+						<h3><a href="#">{{bet?.company}}</a></h3>
+						<p>You are betting on {{bet?.company}}</p>
+						</div>
+					</div>
+				</div>
+			
+				<div class="col-md-12 text-center animate-box">
+					<p><a class="btn btn-success btn-lg btn-learn" (click)="challengeSubmit(bet?.regUser)">Challenge!</a></p>
+
+				</div>
+			</div>
+
+    		</div>		</div>

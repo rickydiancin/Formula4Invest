@@ -13,6 +13,9 @@ import { moveIn, fallIn } from '../router.animations';
 export class LoginComponent implements OnInit {
  state: string = '';
 error: any;
+email: any;
+password: any;
+
     constructor(public af: AngularFire,private router: Router) {
  
       this.af.auth.subscribe(auth => { 
